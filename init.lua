@@ -25,21 +25,6 @@ local function setup(args)
             "PopMode",
           },
         },
-        P = {
-          help = "copy parent directory",
-          messages = {
-            {
-              BashExecSilently = [===[
-              if ]===] .. args.copy_command .. [===[ "${PWD:?}"; then
-                echo "LogSuccess: Copied $PWD to clipboard" >> "${XPLR_PIPE_MSG_IN:?}"
-              else
-                echo "LogError: Failed to copy $PWD" >> "${XPLR_PIPE_MSG_IN:?}"
-              fi
-              ]===],
-            },
-            "PopMode",
-          },
-        },
         esc = {
           help = "cancel",
           messages = {
@@ -58,10 +43,6 @@ local function setup(args)
   if not args.keep_selection then
     table.insert(
       xplr.config.modes.custom.wl_copy.key_bindings.on_key.y.messages,
-      "ClearSelection"
-    )
-    table.insert(
-      xplr.config.modes.custom.wl_copy.key_bindings.on_key.P.messages,
       "ClearSelection"
     )
   end

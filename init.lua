@@ -2,7 +2,7 @@ local function setup(args)
   local xplr = xplr
 
   args = args or {}
-  args.copy_command = args.copy_command or "wl-copy"
+  args.copy_command = args.copy_command or "wl-copy -t text/uri-list"
   args.paste_command = args.paste_command or "wl-paste"
   args.keep_selection = args.keep_selection or false
 

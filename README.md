@@ -48,7 +48,7 @@ require("xpm").setup({
   -- Or
 
   require("wl-clipboard").setup{
-    copy_command = "wl-copy",
+    copy_command = "wl-copy -t text/uri-list",
     paste_command = "wl-paste",
     keep_selection = false,
   }

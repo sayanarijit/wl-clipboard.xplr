@@ -16,9 +16,9 @@ local function setup(args)
             {
               BashExecSilently = [===[
                 if cat "${XPLR_PIPE_RESULT_OUT:?}" | ]===] .. args.copy_command .. [===[; then
-                  echo LogSuccess: Copied paths to clipboard >> ${XPLR_PIPE_MSG_IN:?}
+                  "$XPLR" -m "LogSuccess: %q" "Copied paths to clipboard"
                 else
-                  echo LogSuccess: Failed to copy paths >> ${XPLR_PIPE_MSG_IN:?}
+                  "$XPLR" -m "LogError: %q" "Failed to copy paths"
                 fi
               ]===],
             },
